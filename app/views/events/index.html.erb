@@ -1,0 +1,7 @@
+<h1> All Events</h1>
+
+<h3>Total Events: <%= @events.count %> </h3>
+
+<% @events.each do |event| %>
+  <%= link_to event.name, event_path(event.id) %>
+<%end%>

@@ -1,0 +1,6 @@
+<% if question.bool? %>
+  <%= label_tag(:body, question.body) %>
+  <%= hidden_field_tag('question_ids[]', question.id) %>
+  <%= hidden_field_tag('question_types[]' , 'boolean') %>
+  <%= check_box_tag('question_submissions[]') %>
+<% end %>

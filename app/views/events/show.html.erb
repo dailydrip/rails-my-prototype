@@ -1,0 +1,14 @@
+<h1><%= @event.name %></h1>
+<p><%= @event.description %></p>
+
+<%= form_tag('/events/submit_questions', method: :post) do %>
+  <% @event.questions.each do |question| %>
+    <div>
+      <%= render 'question_string', question: question %>
+    </div>
+    <div>
+      <%= render 'question_boolean', question: question %>
+    </div>
+  <% end %>
+  <%= submit_tag('Send') %>
+<% end %>
